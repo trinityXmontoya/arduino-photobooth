@@ -1,6 +1,6 @@
 $(document).ready( function(){
-  // loadPage();
-  uploadToTwitter();
+  // uploadToTwitter();
+  loadPage();
 });
 
 var loadPage = function(){
@@ -17,10 +17,10 @@ var pics = [];
 
 var scanForPics = function(page){
   pics = page.match(/<img src=".+">/g);
-  return pics
+  console.log(pics)
 };
 
-var uploadToTwitter = function(){
+var uploadToTwitter = function(picture){
   console.log("twittering")
   $.ajax({
     url: 'https://upload.twitter.com/1/statuses/update_with_media.format',
